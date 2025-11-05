@@ -1,0 +1,283 @@
+.loginSection {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("PT SIIX EMS Indonesia.png") no-repeat center center;
+    background-size: cover;
+    /* ✅ ini yang membuat gambar sesuai ukuran layar */
+}
+
+
+
+.login-card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 18px;
+}
+
+.login-card input {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.muted {
+    font-size: 12px;
+    color: #666;
+}
+
+.link {
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 13px;
+}
+
+#appSection {
+    display: none;
+}
+
+:root {
+    --bg: #f4f6f8;
+    --card: #fff;
+    --accent: #2563eb;
+    --muted: #6b7280;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Inter, system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: #0f172a;
+    padding: 18px
+}
+
+.wrap {
+    max-width: 900px;
+    margin: 0 auto
+}
+
+header {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 18px
+}
+
+h1 {
+    font-size: 22px;
+    margin: 0
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 16px
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 0 10px 18px rgba(2, 6, 23, 0.06)
+}
+
+/* Pastikan Part No tetap satu baris dan tidak turun ke bawah */
+/* Pastikan Part No dan Description sejajar (tidak turun ke bawah) */
+/* --- Membuat kolom Part No, Description, dan Ciri-ciri sejajar --- */
+#productTable td.sku,
+#productTable td.name,
+#productTable td.features {
+    white-space: nowrap;
+    /* teks tetap di satu baris */
+    text-align: left;
+    /* rata kiri */
+    vertical-align: middle;
+    /* sejajar vertikal */
+    overflow: hidden;
+    /* sembunyikan teks berlebih */
+    text-overflow: ellipsis;
+    /* tampilkan ... jika teks panjang */
+}
+
+/* --- Lebar kolom biar proporsional (sesuaikan sesuai kebutuhan) --- */
+#productTable td.sku {
+    width: 140px;
+}
+
+#productTable td.name {
+    width: 220px;
+}
+
+#productTable td.features {
+    width: 260px;
+}
+
+/* Menampilkan hanya kata pertama pada kolom Ciri-ciri */
+#productTable td.features {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ambil hanya kata pertama */
+#productTable td.features::after {
+    content: attr(data-firstword);
+}
+
+#productTable td.features span {
+    display: none;
+}
+
+#productTable td.features {
+    position: relative;
+}
+
+#productTable td.features:hover::after {
+    content: attr(data-fulltext);
+    position: absolute;
+    left: 0;
+    top: -30px;
+    background: #333;
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    z-index: 10;
+}
+
+#featuresPreview {
+    transition: all 0.3s ease;
+    color: #334155;
+    background: #f9fafb;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+.card-2 {
+    background: #ffffffaf;
+}
+
+.toolbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.btn {
+    background: var(--accent);
+    color: #ffffff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer
+}
+
+.btn.ghost {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid rgba(37, 99, 235, 0.12)
+}
+
+input[type=search],
+input[type=number],
+input[type=text],
+input[type=file] {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ffffff
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse
+}
+
+th,
+td {
+    padding: 8px;
+    border-bottom: 1px solid #0080ff;
+    font-size: 13px;
+    text-align: left
+}
+
+th {
+    color: var(--muted);
+    font-weight: 600
+}
+
+.small {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+.card-2 h3 {
+    text-align: center;
+}
+
+/* Pastikan kolom gambar punya tinggi tetap dan tidak terpengaruh modal */
+aside.card-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 300px;
+    /* tinggi tetap */
+    position: relative;
+}
+
+/* Area gambar di dalam card */
+#imageViewer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Gambar tetap di tengah proporsional */
+#imageViewer img {
+    height: 70vh;
+    margin-bottom: 40px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
+#imageViewer img:hover {
+    transform: scale(2.05);
+    /* Efek zoom halus saat diarahkan */
+}
+
+
+@media(max-width:920px) {
+    .grid {
+        grid-template-columns: 1fr
+    }
+
+    .card {
+        padding: 10px
+    }
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Indirect Material Preparation</title>
+    <link rel="shortcut icon" href="react.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- LOGIN / REGISTER -->
+    <section id="loginSection" class="loginSection">
+        <div class="login-card" id="loginForm">
+            <h2>Login Aplikasi</h2>
+            <input id="loginUser" placeholder="Username" />
+            <input id="loginPass" type="password" placeholder="Password" />
+            <button class="btn" id="btnLogin">Masuk</button>
+            <div class="muted" style="margin-top:10px;text-align:left">
+            </div>
+            <div style="margin-top:10px">
+                <span class="link" id="showRegister">Daftar akun baru</span>
+            </div>
+        </div>
+
+        <div class="login-card" id="registerForm" style="display:none;">
+            <h2>Daftar Akun Member</h2>
+            <input id="regUser" placeholder="Username baru" />
+            <input id="regPass" type="password" placeholder="Password" />
+            <button class="btn" id="btnRegister">Daftar</button>
+            <div style="margin-top:10px">
+                <span class="link" id="showLogin">Kembali ke login</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- APLIKASI -->
+    <div class="wrap" id="appSection">
+        <header style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+                <h1>Indirect Material Preparation</h1>
+                <div class="small muted">(Ketik Part No, Description, atau ciri-ciri produk untuk mencari)</div>
+            </div>
+            <div>
+                <span id="userRoleLabel" style="font-size:13px;color:var(--muted)"></span>
+                <button class="btn ghost" id="btnLogout" style="margin-left:8px;">Logout</button>
+            </div>
+        </header>
+
+        <div class="grid">
+            <section class="card" id="products">
+                <div class="toolbar">
+                    <button class="btn" id="btnAddProduct">Tambah Produk</button>
+                    <input id="search" placeholder="Cari produk..." type="search" />
+                    <button class="btn ghost" id="btnLoadSample">Contoh</button>
+                    <div style="margin-left:auto;display:flex;gap:8px">
+                        <button class="btn ghost" id="btnExportProducts">Export CSV</button>
+                        <button class="btn ghost" id="btnClearProducts">Hapus Semua</button>
+                    </div>
+                </div>
+
+                <table id="productTable">
+                    <thead>
+                        <tr>
+                            <th>Part No</th>
+                            <th>Description</th>
+                            <th>Ciri-ciri</th>
+                            <th>Harga</th>
+                            <th>Request</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div id="featuresPreview" class="muted" style="margin-top:10px;font-style:italic;"></div>
+
+            </section>
+
+            <aside class="card-2">
+                <h3>Gambar Produk</h3>
+                <div id="imageViewer" class="muted">
+                    Klik nama atau SKU produk untuk melihat gambar
+                </div>
+            </aside>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal"
+            style="display:none;position:fixed;inset:0;background:rgba(2,6,23,0.4);align-items:center;justify-content:center">
+            <div
+                style="background:#fff;padding:14px;border-radius:10px;width:420px;box-shadow:0 10px 30px rgba(2,6,23,0.2)">
+                <h3 id="modalTitle">Tambah Produk</h3>
+                <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+                    <input id="pmSku" placeholder="SKU (opsional)" />
+                    <input id="pmName" placeholder="Nama produk" />
+                    <input id="pmFeatures" placeholder="Ciri-ciri produk (misal: biru, bulat, roll)" />
+                    <input id="pmPrice" placeholder="Harga (angka)" type="number" />
+                    <input id="pmStock" placeholder="Stok" type="number" />
+                    <label>Upload Gambar:</label>
+                    <input id="pmImgFile" type="file" accept="image/*" />
+                    <div style="display:flex;gap:8px;justify-content:flex-end">
+                        <button class="btn ghost" id="btnCancel">Batal</button>
+                        <button class="btn" id="btnSaveProduct">Simpan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
